@@ -1,0 +1,121 @@
+#todoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 95%;
+  max-width: 1200px;
+  min-width: 800px;
+
+  padding: 20px;
+}
+
+#inputArea {
+  background-color: rgba(194, 194, 194, 0.514);
+
+  width: 100%;
+  height: 80px;
+  margin: 20px auto 0 auto;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.inputTitle {
+  font-weight: bold;
+  margin: 0 7px 0 20px;
+}
+
+.inputBox {
+  width: 150px;
+  height: 25px;
+
+  border: 0;
+  border-radius: 5px;
+}
+
+.addButton {
+  width: 100px;
+  height: 30px;
+
+  color: white;
+
+  background-color: rgb(68, 129, 109);
+  border: 0;
+  border-radius: 7px;
+
+  margin: 0 20px 0 auto;
+}
+
+#working {
+  font-weight: bold;
+  font-size: 20px;
+
+  margin-top: 20px;
+}
+
+#workingArea {
+  background-color: beige;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 0 0 20px 10px;
+}
+
+.todo {
+  width: 200px;
+
+  font-weight: bold;
+
+  margin: 20px 20px 0 0;
+  padding: 7px 10px 7px 20px;
+
+  border: 2px solid green;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.todoTitle {
+  font-size: 17px;
+  margin: 10px 0 10px 0;
+}
+
+.whatTodo {
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.todoButtonBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.todoDeleteButton {
+  background-color: white;
+  width: 110px;
+  height: 30px;
+
+  border: 2px solid rgb(255, 66, 66);
+  border-radius: 5px;
+}
+
+.todoDoneButton {
+  background-color: white;
+  width: 110px;
+  height: 30px;
+
+  margin-left: 10px;
+
+  border: 2px solid rgb(14, 179, 14);
+  border-radius: 5px;
+}
