@@ -10,7 +10,7 @@ const Done = ({ item, removeFunction, doneFunction}) => {
               className="todoDeleteButton"
               onClick={() => removeFunction(item.id)}
             >
-              삭제하기
+              삭제
             </button>
             <button className="todoDoneButton" onClick={() => doneFunction(item.id)}>취소</button>
           </div>
