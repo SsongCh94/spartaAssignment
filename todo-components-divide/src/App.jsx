@@ -14,14 +14,14 @@ function App() {
     },
     {
       id: 2,
-      title: "리액트 공부하기",
-      content: "리액트 기초를 공부해봅시다.",
+      title: "자바스크립트 공부하기",
+      content: "자바스크립트를 공부해봅시다.",
       done: false,
     },
     {
       id: 3,
-      title: "리액트 공부하기",
-      content: "리액트 기초를 공부해봅시다.",
+      title: "HTML,CSS 공부하기",
+      content: "HTML,CSS를 공부해봅시다.",
       done: false,
     },
   ]);

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import Inputs from "./Inputs";
 
 function ReviseFunction({ todos, setTodos, item }) {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState(todos.title);
+  const [content, setContent] = useState(todos.content);
 
   const onChangeTitle = (e) => {
     setTitle(e.target.value);
@@ -34,18 +35,8 @@ function ReviseFunction({ todos, setTodos, item }) {
   return (
     <>
       <div>
-        <input
-          type="text"
-          className="reviseInput"
-          onChange={onChangeTitle}
-          placeholder="타이틀"
-        />
-        <input
-          type="text"
-          className="reviseInput"
-          onChange={onChangeContent}
-          placeholder="내용"
-        />
+        <Inputs styleName={'reviseInput'} onChangeFunc={onChangeTitle} inPlaceholder={'타이틀'}/>
+        <Inputs styleName={'reviseInput'} onChangeFunc={onChangeContent} inPlaceholder={'내용'}/>
       </div>
       <button
         onClick={() => clickSaveButton(item.id)}
