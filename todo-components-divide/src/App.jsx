@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Todos from "./components/Todos";
+import Header from "./components/Header";
+import Navbar from "./Navbar";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -24,49 +26,13 @@ function App() {
     },
   ]);
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
 
-  const titleChangeHandler = (event) => {
-    setTitle(event.target.value);
-  };
-  const contentChangeHandler = (event) => {
-    setContent(event.target.value);
-  };
 
-  const clickAddButton = () => {
-    const newTodo = {
-      id: todos[todos.length - 1].id + 1,
-      title,
-      content,
-      done: false,
-    };
-
-    setTodos([...todos, newTodo]);
-    setTitle("");
-    setContent("");
-  };
 
   return (
     <div id="todoList">
-      <div id="inputArea">
-        <span className="inputTitle">제목</span>
-        <input
-          className="inputBox"
-          value={title}
-          onChange={titleChangeHandler}
-        />
-        <span className="inputTitle">내용</span>
-        <input
-          className="inputBox"
-          value={content}
-          onChange={contentChangeHandler}
-        />
-        <button className="addButton" onClick={clickAddButton}>
-          추가하기
-        </button>
-      </div>
-
+      <Navbar />
+      <Header todos={todos} setTodos={setTodos}/>
       <Todos todos={todos} setTodos={setTodos} types={'isWorking'} />
       <Todos todos={todos} setTodos={setTodos} types={'isDone'} />
     </div>
