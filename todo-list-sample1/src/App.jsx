@@ -48,23 +48,7 @@ function App() {
     setContent("");
   };
 
-  const clickDeleteButtonHandler = (id) => {
-    const newTodo = todos.filter((item) => {
-      return item.id !== id;
-    });
-    setTodos(newTodo);
-  };
-  const clickDoneButtonHandler = (id) => {
-    const doneThing = todos.map((item) => {
-      if (item.id === id) {
-        if (item.done === false) {
-          item.done = true;
-        } else item.done = false;
-      }
-      return item;
-    });
-    setTodos([...doneThing]);
-  };
+
 
   return (
     <div id="todoList">
@@ -93,10 +77,9 @@ function App() {
             <Todos
               key={item.id}
               item={item}
-              removeFunction={clickDeleteButtonHandler}
-              doneFunction={clickDoneButtonHandler}
               todos={todos}
               setTodos={setTodos}
+
             />
           );
         })}
@@ -109,8 +92,8 @@ function App() {
             <Done
               key={item.id}
               item={item}
-              removeFunction={clickDeleteButtonHandler}
-              doneFunction={clickDoneButtonHandler}
+              todos={todos}
+              setTodos={setTodos}
             />
           );
         })}

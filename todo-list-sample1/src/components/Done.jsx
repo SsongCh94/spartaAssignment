@@ -1,4 +1,26 @@
-const Done = ({ item, removeFunction, doneFunction }) => {
+const Done = ({ item, todos, setTodos}) => {
+  const factor = {
+    
+  }
+
+  const clickDeleteButtonHandler = (id) => {
+    const newTodo = todos.filter((item) => {
+      return item.id !== id;
+    });
+    setTodos(newTodo);
+  };
+  const clickDoneButtonHandler = (id) => {
+    const doneThing = todos.map((item) => {
+      if (item.id === id) {
+        if (item.done === false) {
+          item.done = true;
+        } else item.done = false;
+      }
+      return item;
+    });
+    setTodos([...doneThing]);
+  };
+
   if (item.done === true) {
     return (
       <div className="todo" key={item.id}>
@@ -8,13 +30,13 @@ const Done = ({ item, removeFunction, doneFunction }) => {
         <div className="todoButtonBox">
           <button
             className="todoDeleteButton"
-            onClick={() => removeFunction(item.id)}
+            onClick={() => clickDeleteButtonHandler(item.id)}
           >
             삭제
           </button>
           <button
             className="todoDoneButton"
-            onClick={() => doneFunction(item.id)}
+            onClick={() => clickDoneButtonHandler(item.id)}
           >
             취소
           </button>
