@@ -1,27 +1,10 @@
 import React, { useState } from 'react'
 import ReviseFunction from './ReviseFunction';
+import Buttons from './Buttons';
 
 function Cards({item, todos, setTodos, types}) {
 
     const [visible, setVisible] = useState(false);
-    const clickDeleteButtonHandler = (id) => {
-        const newTodo = todos.filter((item) => {
-          return item.id !== id;
-        });
-        setTodos(newTodo);
-      };
-      const clickDoneButtonHandler = (id) => {
-        const doneThing = todos.map((item) => {
-          if (item.id === id) {
-            if (item.done === false) {
-              item.done = true;
-            } else item.done = false;
-          }
-          return item;
-        });
-        setTodos([...doneThing]);
-      };
-
 
   return (
     <div className="todo" key={item.id}>
@@ -29,24 +12,9 @@ function Cards({item, todos, setTodos, types}) {
               <div className="whatTodo">{item.content}</div>
 
               <div className="todoButtonBox">
-                <button
-                  className="todoDeleteButton"
-                  onClick={() => clickDeleteButtonHandler(item.id)}
-                >
-                  삭제
-                </button>
-                <button
-                  className="todoDoneButton"
-                  onClick={() => clickDoneButtonHandler(item.id)}
-                >
-                  { types == 'isWorking' ? '완료' : '취소'}
-                </button>
-                <button
-                  className="todoReviseButton"
-                  onClick={() => setVisible(!visible)}
-                >
-                  {visible ? "취소" : "수정"}
-                </button>
+                <Buttons todos={todos} setTodos={setTodos} item={item} functions={'deleteFunction'}/>
+                <Buttons todos={todos} setTodos={setTodos} item={item} functions={'doneFunction'} types={types}/>
+                <Buttons todos={todos} setTodos={setTodos} item={item} functions={'reviseFunction'} visible={visible} setVisible={setVisible} />                
               </div>
               {visible && (
                 <ReviseFunction todos={todos} setTodos={setTodos} item={item} />

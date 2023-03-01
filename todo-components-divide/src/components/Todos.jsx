@@ -1,5 +1,3 @@
-import { useState } from "react";
-import ReviseFunction from "./ReviseFunction";
 import Cards from "./Cards"
 
 const Todos = ({ todos, setTodos, types }) => {
@@ -7,10 +5,10 @@ const Todos = ({ todos, setTodos, types }) => {
   //
   return (
   <>
-    <div id="working">{ types == 'isWorking' ? 'Working..🔥' : 'Done..🎉'}</div>
+    <div id="working">{ types === 'isWorking' ? 'Working..🔥' : 'Done..🎉'}</div>
     <div id="workingArea">
       {todos.map((item) => {
-        if (types == 'isWorking') {
+        if (types === 'isWorking') {
         if (item.done === false) {
           return (          
             <Cards item={item} todos={todos} setTodos={setTodos} types={types}/>            
