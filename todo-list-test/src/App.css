@@ -1,0 +1,39 @@
+header {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 800px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardsBox {
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  padding: 10px;
+
+  border: 1px solid green;
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+#TodoList {
+  width: 100%;
+  max-width: 1200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
