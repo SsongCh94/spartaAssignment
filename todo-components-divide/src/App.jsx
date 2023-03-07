@@ -26,15 +26,12 @@ function App() {
     },
   ]);
 
-
-
-
   return (
     <div id="todoList">
       <Navbar />
-      <Header todos={todos} setTodos={setTodos}/>
-      <Todos todos={todos} setTodos={setTodos} types={'isWorking'} />
-      <Todos todos={todos} setTodos={setTodos} types={'isDone'} />
+      <Header todos={todos} setTodos={setTodos} />
+      <Todos todos={todos} setTodos={setTodos} types={"isWorking"} />
+      <Todos todos={todos} setTodos={setTodos} types={"isDone"} />
     </div>
   );
 }

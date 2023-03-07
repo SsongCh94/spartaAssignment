@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { reviseTodo } from '../redux/modules/todos';
 import Inputs from "./Inputs";
 
-function ReviseFunction({ todos, setTodos, item }) {
+function ReviseFunction({ item, visible, setVisible }) {
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState(todos.title);
   const [content, setContent] = useState(todos.content);
 
@@ -13,30 +18,28 @@ function ReviseFunction({ todos, setTodos, item }) {
   };
 
   const clickSaveButton = (id) => {
-    let changeTodo = todos.filter((item) => {
-      return item.id === id;
-    });
-    const originalTodo = todos.filter((item) => {
-      return item.id !== id;
-    });
-
-    changeTodo = {
-      id: todos[todos.length - 1].id + 1,
+    dispatch(reviseTodo({
+      id,
       title,
       content,
-      done: false,
-    };
-
-    setTodos([...originalTodo, changeTodo]);
-    setTitle("");
-    setContent("");
+      done: item.done
+    }))
+    setVisible(!visible)
   };
 
   return (
     <>
       <div>
-        <Inputs styleName={'reviseInput'} onChangeFunc={onChangeTitle} inPlaceholder={'타이틀'}/>
-        <Inputs styleName={'reviseInput'} onChangeFunc={onChangeContent} inPlaceholder={'내용'}/>
+        <Inputs
+          styleName={"reviseInput"}
+          onChangeFunc={onChangeTitle}
+          inPlaceholder={"타이틀"}
+        />
+        <Inputs
+          styleName={"reviseInput"}
+          onChangeFunc={onChangeContent}
+          inPlaceholder={"내용"}
+        />
       </div>
       <button
         onClick={() => clickSaveButton(item.id)}

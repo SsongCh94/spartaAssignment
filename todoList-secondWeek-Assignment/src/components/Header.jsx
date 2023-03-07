@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo } from "../redux/modules/todos";
 import Buttons from "./Buttons";
 import Inputs from "./Inputs";
 
-function Header({ todos, setTodos }) {
+function Header() {
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+
+  // FIXME: 스테이트 리덕스로 옮기기?? 여기밖에 안쓰는데??
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  // FIXME: /////////////
+
+  const id = todos[todos.length - 1].id + 1;
 
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
@@ -14,15 +23,7 @@ function Header({ todos, setTodos }) {
   };
 
   const clickAddButton = () => {
-    const newTodo = {
-      id: todos[todos.length - 1].id + 1,
-      title,
-      content,
-      done: false,
-    };
-    setTodos([...todos, newTodo]);
-    setTitle("");
-    setContent("");
+    dispatch(addTodo({ id, title, content, done: false }));
   };
   return (
     <div id="inputArea">
