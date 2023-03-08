@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { reviseTodo } from '../redux/modules/todos';
+import { useDispatch, useSelector } from "react-redux";
+import { reviseTodo } from "../redux/modules/todos";
 import Inputs from "./Inputs";
 
 function ReviseFunction({ item, visible, setVisible }) {
@@ -18,13 +18,15 @@ function ReviseFunction({ item, visible, setVisible }) {
   };
 
   const clickSaveButton = (id) => {
-    dispatch(reviseTodo({
-      id,
-      title,
-      content,
-      done: item.done
-    }))
-    setVisible(!visible)
+    dispatch(
+      reviseTodo({
+        id,
+        title,
+        content,
+        done: item.done,
+      })
+    );
+    setVisible(!visible);
   };
 
   return (
