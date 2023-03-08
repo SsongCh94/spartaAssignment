@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ReviseFunction from "./ReviseFunction";
 import Buttons from "./Buttons";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteTodo, doneTodo } from "../redux/modules/todos";
+import { Link } from "react-router-dom";
 
 function Cards({ item }) {
   const [visible, setVisible] = useState(false);
@@ -19,14 +20,14 @@ function Cards({ item }) {
     dispatch(deleteTodo(id));
   };
   const clickDoneButtonHandler = () => {
-    dispatch(doneTodo(id))
+    dispatch(doneTodo(id));
   };
 
   return (
     <div className="todo" key={item.id}>
       <div className="todoTitle">{item.title}</div>
       <div className="whatTodo">{item.content}</div>
-
+      <Link to={`/details/${item.id}`}>상세보기</Link>
       <div className="todoButtonBox">
         <Buttons
           text={"삭제"}
@@ -49,7 +50,7 @@ function Cards({ item }) {
         />
       </div>
       {visible && (
-        <ReviseFunction item={item} visible={visible} setVisible={setVisible}/>
+        <ReviseFunction item={item} visible={visible} setVisible={setVisible} />
       )}
     </div>
   );

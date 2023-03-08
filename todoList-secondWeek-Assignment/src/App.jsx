@@ -1,18 +1,9 @@
 import React from "react";
 import "./App.css";
-import Todos from "./components/Todos";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
+import Router from "./shared/router";
 
 function App() {
-  return (
-    <div id="todoList">
-      <Navbar />
-      <Header />
-      <Todos types={false} />
-      <Todos types={true} />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;
