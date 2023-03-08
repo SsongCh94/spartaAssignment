@@ -4,6 +4,7 @@ import Buttons from "./Buttons";
 import { useDispatch } from "react-redux";
 import { deleteTodo, doneTodo } from "../redux/modules/todos";
 import { Link } from "react-router-dom";
+import { TodoBox, TodoButtonBox } from "./CardsStyle";
 
 function Cards({ item }) {
   const [visible, setVisible] = useState(false);
@@ -11,10 +12,6 @@ function Cards({ item }) {
   const dispatch = useDispatch();
 
   const id = item.id;
-
-  //TODO: setTodos 를 dispatch로 바꾸기.
-  //TODO: reducer 만들기.
-  //FIXME: 아래 버튼핸들러 reducer 로 만들기
 
   const clickDeleteButtonHandler = () => {
     dispatch(deleteTodo(id));
@@ -24,11 +21,11 @@ function Cards({ item }) {
   };
 
   return (
-    <div className="todo" key={item.id}>
-      <div className="todoTitle">{item.title}</div>
-      <div className="whatTodo">{item.content}</div>
+    <TodoBox key={item.id}>
+      <h2>{item.title}</h2>
+      <p>{item.content}</p>
       <Link to={`/details/${item.id}`}>상세보기</Link>
-      <div className="todoButtonBox">
+      <TodoButtonBox>
         <Buttons
           text={"삭제"}
           styleName="todoDeleteButton"
@@ -48,11 +45,11 @@ function Cards({ item }) {
             setVisible(!visible);
           }}
         />
-      </div>
+      </TodoButtonBox>
       {visible && (
         <ReviseFunction item={item} visible={visible} setVisible={setVisible} />
       )}
-    </div>
+    </TodoBox>
   );
 }
 

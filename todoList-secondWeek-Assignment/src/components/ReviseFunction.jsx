@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { reviseTodo } from "../redux/modules/todos";
 import Inputs from "./Inputs";
+import { ReviseSaveButton } from "./ReviseFunctionStyle";
 
 function ReviseFunction({ item, visible, setVisible }) {
   const todos = useSelector((state) => state.todos);
@@ -43,12 +44,9 @@ function ReviseFunction({ item, visible, setVisible }) {
           inPlaceholder={"내용"}
         />
       </div>
-      <button
-        onClick={() => clickSaveButton(item.id)}
-        className="reviseSaveButton"
-      >
+      <ReviseSaveButton onClick={() => clickSaveButton(item.id)}>
         저장하기
-      </button>
+      </ReviseSaveButton>
     </>
   );
 }
