@@ -5,10 +5,27 @@ import Done from "./components/Done";
 
 function App() {
   const [todos, setTodos] = useState([
-    { id: 1, title: "리액트 공부하기", content: "리액트 기초를 공부해봅시다.", done: false },
-    { id: 2, title: "리액트 공부하기", content: "리액트 기초를 공부해봅시다.", done: false },
-    { id: 3, title: "리액트 공부하기", content: "리액트 기초를 공부해봅시다.", done: false },
+    {
+      id: 1,
+      title: "리액트 공부하기",
+      content: "리액트 기초를 공부해봅시다.",
+      done: false,
+    },
+    {
+      id: 2,
+      title: "리액트 공부하기",
+      content: "리액트 기초를 공부해봅시다.",
+      done: false,
+    },
+    {
+      id: 3,
+      title: "리액트 공부하기",
+      content: "리액트 기초를 공부해봅시다.",
+      done: false,
+    },
   ]);
+
+  //git clone test
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -29,27 +46,27 @@ function App() {
     };
 
     setTodos([...todos, newTodo]);
-    setTitle('');
-    setContent('');
+    setTitle("");
+    setContent("");
   };
 
   const clickDeleteButtonHandler = (id) => {
-    const newTodo = todos.filter((item) =>{
+    const newTodo = todos.filter((item) => {
       return item.id !== id;
-    })
+    });
     setTodos(newTodo);
-  }
+  };
   const clickDoneButtonHandler = (id) => {
     const doneThing = todos.map((item) => {
-      if (item.id === id) {        
+      if (item.id === id) {
         if (item.done === false) {
           item.done = true;
         } else item.done = false;
       }
       return item;
-    } )
+    });
     setTodos([...doneThing]);
-  }
+  };
 
   return (
     <div id="todoList">
@@ -66,7 +83,9 @@ function App() {
           value={content}
           onChange={contentChangeHandler}
         />
-        <button className="addButton" onClick={clickAddButton}>추가하기</button>
+        <button className="addButton" onClick={clickAddButton}>
+          추가하기
+        </button>
       </div>
 
       <div id="working">Working..🔥</div>
@@ -74,29 +93,28 @@ function App() {
         {todos.map((item) => {
           return (
             <Todos
-            key={item.id} 
-            item={item} 
-            removeFunction={clickDeleteButtonHandler}
-            doneFunction={clickDoneButtonHandler}/>
-            
+              key={item.id}
+              item={item}
+              removeFunction={clickDeleteButtonHandler}
+              doneFunction={clickDoneButtonHandler}
+            />
           );
-        })}        
+        })}
       </div>
 
       <div id="working">Done..🎉</div>
       <div id="workingArea">
         {todos.map((item) => {
           return (
-            <Done 
-            key={item.id}
-            item={item} 
-            removeFunction={clickDeleteButtonHandler}
-            doneFunction={clickDoneButtonHandler}/>
+            <Done
+              key={item.id}
+              item={item}
+              removeFunction={clickDeleteButtonHandler}
+              doneFunction={clickDoneButtonHandler}
+            />
           );
-        })}        
+        })}
       </div>
-
-
     </div>
   );
 }
