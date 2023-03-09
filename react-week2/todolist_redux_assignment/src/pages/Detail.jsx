@@ -13,6 +13,7 @@ const Detail = () => {
 
   useEffect(() => {
     dispatch(getTodoByID(id));
+    console.log(todo);
   });
 
   return (
