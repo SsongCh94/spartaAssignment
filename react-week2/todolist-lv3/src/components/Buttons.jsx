@@ -27,6 +27,13 @@ const BORDERS = {
     border: 4px solid RGB(85, 239, 196);
     color: black;
   `,
+  black: css`
+    background-color: white;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    color: black;
+    margin-left: 90px;
+  `,
 };
 
 const StButton = styled.button`
@@ -34,9 +41,9 @@ const StButton = styled.button`
   border: none;
   font-weight: bold;
   font-size: 15px;
+  border-radius: 10px;
   ${(props) => props.sizeStyle}
   ${(props) => props.borderStyle}
-  border-radius: 10px;
 `;
 
 function Buttons({ size, border, children, colors, onClickFunc }) {

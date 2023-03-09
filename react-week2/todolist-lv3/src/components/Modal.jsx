@@ -61,27 +61,41 @@ function Modal({ setModalOpen, size, children, modalOnClickFunc, type }) {
   const modalCloseHandler = () => {
     setModalOpen(false);
   };
+  if (type) {
+    return (
+      <>
+        <ModalContainer onClick={modalOnClickFunc} />
+        <ModalWindow sizeStyle={sizeStyle}>
+          {children}
 
-  return (
-    <>
-      <ModalContainer onClick={modalOnClickFunc} />
-      <ModalWindow sizeStyle={sizeStyle}>
-        {children}
-        <ButtonArea>
-          <Buttons
-            colors={"RGB(250, 177, 160)"}
-            size={"small"}
-            onClickFunc={modalCloseHandler}
-          >
-            닫기
+          <ButtonArea>
+            <Buttons
+              colors={"RGB(250, 177, 160)"}
+              size={"small"}
+              onClickFunc={modalCloseHandler}
+            >
+              닫기
+            </Buttons>
+            <Buttons colors={"RGB(85, 239, 196)"} size={"small"}>
+              확인
+            </Buttons>
+          </ButtonArea>
+        </ModalWindow>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <ModalContainer onClick={modalOnClickFunc} />
+        <ModalWindow sizeStyle={sizeStyle}>
+          {children}
+          <Buttons border={"black"} onClickFunc={modalOnClickFunc}>
+            X
           </Buttons>
-          <Buttons colors={"RGB(85, 239, 196)"} size={"small"}>
-            확인
-          </Buttons>
-        </ButtonArea>
-      </ModalWindow>
-    </>
-  );
+        </ModalWindow>
+      </>
+    );
+  }
 }
 
 export default Modal;

@@ -93,7 +93,7 @@ function App() {
           open modal
         </Buttons>
         {modalOpen && (
-          <Modal setModalOpen={setModalOpen} size={"large"}>
+          <Modal setModalOpen={setModalOpen} size={"large"} type={true}>
             닫기와 확인 버튼, 외부 눌러도 안닫힘
           </Modal>
         )}
@@ -101,7 +101,6 @@ function App() {
           size={"large"}
           border={"orange"}
           onClickFunc={modal2OpenHandler}
-          type={true}
         >
           open modal
         </Buttons>
