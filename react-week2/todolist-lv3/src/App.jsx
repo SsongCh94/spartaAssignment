@@ -5,6 +5,7 @@ import Buttons from "./components/Buttons";
 import Inputs from "./components/Inputs";
 import Modal from "./components/Modal";
 import { SiAccenture, SiBitcoincash } from "react-icons/si";
+import Selects from "./components/Select";
 
 function App() {
   const orangeColor = "RGB(250, 177, 160)";
@@ -114,6 +115,11 @@ function App() {
             닫기 버튼, 외부 누르면 닫힘
           </Modal>
         )}
+      </Area>
+      <h1>Select</h1>
+      <Area>
+        <Selects />
+        <Selects />
       </Area>
     </>
   );
