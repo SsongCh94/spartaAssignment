@@ -17,10 +17,12 @@ const StInput = styled.input`
   ${(props) => props.sizeStyle}
 `;
 
-function Inputs({ size, value }) {
+function Inputs({ size, value, placeholder }) {
   const sizeStyle = SIZES[size];
 
-  return <StInput sizeStyle={sizeStyle} value={value} />;
+  return (
+    <StInput sizeStyle={sizeStyle} value={value} placeholder={placeholder} />
+  );
 }
 
 export default Inputs;

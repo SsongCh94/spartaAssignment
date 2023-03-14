@@ -26,7 +26,7 @@ function NavBar() {
       <Buttons size={"nav"} border={"none"} Func={() => navigate("/")}>
         <Si1Password />
       </Buttons>
-      <h2>DdodoList</h2>
+      <h2>MovieList</h2>
     </NavigationBar>
   );
 }

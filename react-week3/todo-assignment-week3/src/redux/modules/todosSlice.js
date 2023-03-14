@@ -1,19 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  todo: {
+  movies: {
     id: 0,
-    author: "",
+    url: "",
     title: "",
+    score: "",
     content: "",
-    isDone: false,
   },
   isLoading: false,
   ieError: false,
   error: null,
 };
-
-const __getTodos = createAsyncThunk("todos/getTodos");
 
 const todos = createSlice({
   name: "todo",

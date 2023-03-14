@@ -27,14 +27,14 @@ function Home() {
         emoticon={<SiAzuredataexplorer />}
         Func={() => navigate("/addTodos")}
       >
-        할일 기록하기
+        영화 기록하기
       </Buttons>
       <Buttons
         size={"home"}
         emoticon={<SiAzuredataexplorer />}
         Func={() => navigate("/todos")}
       >
-        TODO LIST
+        영화 목록
       </Buttons>
     </HomeArea>
   );

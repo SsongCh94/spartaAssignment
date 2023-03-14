@@ -2,8 +2,24 @@
   "posts": [
     {
       "id": 1,
+      "URL": "www.typicode.com",
       "title": "json-server",
-      "author": "typicode"
+      "star": "별볇렵ㄹ",
+      "comment": "코멭느"
+    },
+    {
+      "id": 2,
+      "URL": "www.ㅁㄹㅇ.com",
+      "title": "123123123123er",
+      "star": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "comment": "ㄹㄹㄹㄹㄹㄹㄹ"
+    },
+    {
+      "id": 3,
+      "URL": "www.12ㅊ312ㅊ.com",
+      "title": "jㅁㄴㅊㅇㄹㅁㅊㅇㄴㄹㅊㅁㄴㅇㄹ",
+      "star": "ㅋㅌㅌㅌㅌㅌㅌㅎㅎㅎㅎㅎㅎㅎㅎ",
+      "comment": "코멭ㄷㄷㄷㄷㄷㄷㄷ느"
     }
   ]
 }
