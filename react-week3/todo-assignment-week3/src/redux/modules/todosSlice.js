@@ -10,9 +10,10 @@ const initialState = {
   },
   isLoading: false,
   ieError: false,
+  error: null,
 };
 
-const __getTodos = createAsyncThunk({});
+const __getTodos = createAsyncThunk("todos/getTodos");
 
 const todos = createSlice({
   name: "todo",

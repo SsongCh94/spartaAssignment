@@ -13,15 +13,28 @@ const SIZES = {
 
     box-sizing: border-box;
     padding: 40px;
+
+    border: 2px solid black;
+    border-radius: 20px;
+  `,
+  nav: css`
+    background-color: black;
+    color: white;
+    font-size: 50px;
   `,
 };
 
-const BORDERS = {};
+const BORDERS = {
+  none: css`
+    border: none;
+  `,
+};
 
 const COLORS = {};
 
 const StButton = styled.button`
   ${(props) => props.sizeStyle}
+  ${(props) => props.borderStyle}
 `;
 
 function Buttons({ size, color, border, children, Func, emoticon }) {

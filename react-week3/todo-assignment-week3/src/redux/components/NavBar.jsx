@@ -1,6 +1,8 @@
 import React from "react";
 import { Si1Password } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Buttons from "./Buttons";
 
 const NavigationBar = styled.nav`
   background-color: black;
@@ -17,11 +19,13 @@ const NavigationBar = styled.nav`
 `;
 
 function NavBar() {
+  const navigate = useNavigate();
+
   return (
     <NavigationBar>
-      <h1>
+      <Buttons size={"nav"} border={"none"} Func={() => navigate("/")}>
         <Si1Password />
-      </h1>
+      </Buttons>
       <h2>DdodoList</h2>
     </NavigationBar>
   );

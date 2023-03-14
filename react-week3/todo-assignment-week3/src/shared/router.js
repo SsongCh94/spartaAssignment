@@ -3,15 +3,16 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import AddTodos from "../pages/AddTodos";
 import Home from "../pages/Home";
 import Todos from "../pages/Todos";
+import NavBar from "../redux/components/NavBar";
 
 function Router() {
   return (
     <BrowserRouter>
-      <nav>
+      <NavBar>
         <Link to={"/"}>Home</Link>
         <Link to={"/todos"}>Todos</Link>
         <Link to={"/addTodos"}>AddTodos</Link>
-      </nav>
+      </NavBar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/todos" element={<Todos />} />
