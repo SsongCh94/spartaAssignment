@@ -1,22 +1,18 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import AddTodos from "../pages/AddTodos";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AddMovie from "../pages/AddMovie";
+import Detail from "../pages/Detail";
 import Home from "../pages/Home";
-import Todos from "../pages/Todos";
 import NavBar from "../redux/components/NavBar";
 
 function Router() {
   return (
     <BrowserRouter>
-      <NavBar>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/todos"}>Todos</Link>
-        <Link to={"/addTodos"}>AddTodos</Link>
-      </NavBar>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/todos" element={<Todos />} />
-        <Route path="/addTodos" element={<AddTodos />} />
+        <Route path="addMovie" element={<AddMovie />} />
+        <Route path="detail/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );

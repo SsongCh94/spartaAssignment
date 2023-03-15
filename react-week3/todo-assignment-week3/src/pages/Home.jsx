@@ -1,41 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SiAzuredataexplorer } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import Buttons from "../redux/components/Buttons";
-
-const HomeArea = styled.div`
-  background-color: aqua;
-  width: 100%;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 50px;
-
-  padding: 30px;
-`;
+import Cards from "../redux/components/Cards";
+import { HomeArea, MovieList } from "./Home.style";
+import api from "../axios/api";
 
 function Home() {
   const navigate = useNavigate();
+
+  // const fetchMovies =
+  const [movies, setMovies] = useState(null);
+
+  const fetchMovies = async () => {
+    const { data } = await api.get("/posts");
+    console.log("data ===>", data);
+    setMovies(data);
+  };
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+
   return (
     <HomeArea>
-      <h1>TodoList</h1>
+      <h1>DdopartaPedia</h1>
       <Buttons
         size={"home"}
         emoticon={<SiAzuredataexplorer />}
-        Func={() => navigate("/addTodos")}
+        Func={() => navigate("/addMovie")}
       >
         영화 기록하기
       </Buttons>
-      <Buttons
-        size={"home"}
-        emoticon={<SiAzuredataexplorer />}
-        Func={() => navigate("/todos")}
-      >
-        영화 목록
-      </Buttons>
+      <MovieList>
+        {movies?.map((item) => {
+          return (
+            <Cards
+              key={item.id}
+              title={item.title}
+              URL={item.URL}
+              writer={item.writer}
+              star={item.star}
+              id={item.id}
+            />
+          );
+        })}
+      </MovieList>
     </HomeArea>
   );
 }

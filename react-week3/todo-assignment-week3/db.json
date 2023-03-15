@@ -2,24 +2,83 @@
   "posts": [
     {
       "id": 1,
+      "writer": "쏭",
       "URL": "www.typicode.com",
       "title": "json-server",
       "star": "별볇렵ㄹ",
-      "comment": "코멭느"
+      "content": "코멭느",
+      "comments": [
+        {
+          "id": 1,
+          "content": "바보같네요"
+        },
+        {
+          "id": 2,
+          "content": "124123123"
+        },
+        {
+          "id": 3,
+          "content": "asdcfasdcf"
+        },
+        {
+          "id": 4,
+          "content": "234234234c234"
+        }
+      ]
     },
     {
       "id": 2,
+      "writer": "송송송",
       "URL": "www.ㅁㄹㅇ.com",
       "title": "123123123123er",
       "star": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "comment": "ㄹㄹㄹㄹㄹㄹㄹ"
+      "content": "ㄹㄹㄹㄹㄹㄹㄹ",
+      "comments": [
+        {
+          "id": 2,
+          "content": "멍청이에요"
+        }
+      ]
     },
     {
       "id": 3,
+      "writer": "채널94",
       "URL": "www.12ㅊ312ㅊ.com",
       "title": "jㅁㄴㅊㅇㄹㅁㅊㅇㄴㄹㅊㅁㄴㅇㄹ",
       "star": "ㅋㅌㅌㅌㅌㅌㅌㅎㅎㅎㅎㅎㅎㅎㅎ",
-      "comment": "코멭ㄷㄷㄷㄷㄷㄷㄷ느"
+      "content": "코멭ㄷㄷㄷㄷㄷㄷㄷ느",
+      "comments": [
+        {
+          "id": 3,
+          "content": "이게뭐죠"
+        }
+      ]
+    },
+    {
+      "writer": "asdfasdf",
+      "URL": "https://colorate.azurewebsites.net/ko/Color/CCD0D9",
+      "title": "fasdfasdfasdf",
+      "star": "asdfa121123123123123",
+      "content": "123123123123123123",
+      "comments": [
+        {
+          "content": null
+        }
+      ],
+      "id": 4
+    },
+    {
+      "writer": "ascdf",
+      "URL": "https://colorate.azurewebsites.net/ko/Color/CCD0D9",
+      "title": "acsdfacsd",
+      "star": "123123123",
+      "content": "512525125124124",
+      "comments": [
+        {
+          "content": null
+        }
+      ],
+      "id": 5
     }
   ]
 }

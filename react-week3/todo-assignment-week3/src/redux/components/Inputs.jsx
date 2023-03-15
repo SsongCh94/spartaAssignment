@@ -1,6 +1,21 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+function Inputs({ size, value, placeholder, onChange, max, type }) {
+  const sizeStyle = SIZES[size];
+
+  return (
+    <StInput
+      max={max}
+      sizeStyle={sizeStyle}
+      value={value}
+      placeholder={placeholder}
+      onChange={onChange}
+      type={type}
+    />
+  );
+}
+
 const SIZES = {
   small: css``,
   medium: css`
@@ -16,13 +31,5 @@ const SIZES = {
 const StInput = styled.input`
   ${(props) => props.sizeStyle}
 `;
-
-function Inputs({ size, value, placeholder }) {
-  const sizeStyle = SIZES[size];
-
-  return (
-    <StInput sizeStyle={sizeStyle} value={value} placeholder={placeholder} />
-  );
-}
 
 export default Inputs;
