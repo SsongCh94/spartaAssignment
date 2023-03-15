@@ -17,12 +17,13 @@ function Detail() {
 
   //FIXME: 댓글 추가 테스트중
   const onAddBtnClickHandler = async () => {
-    const test = await api.get("/posts");
-    console.log(test);
+    const { data } = await api.get(`/posts/${params.id}`);
+    console.log("data ===>", data.comments);
   };
 
   useEffect(() => {
     fetchMovies();
+    onAddBtnClickHandler();
   }, []);
 
   const foundMovie = movie?.find((item) => {
