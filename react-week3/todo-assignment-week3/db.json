@@ -6,25 +6,7 @@
       "URL": "www.typicode.com",
       "title": "json-server",
       "star": "별볇렵ㄹ",
-      "content": "코멭느",
-      "comments": [
-        {
-          "id": 1,
-          "content": "바보같네요"
-        },
-        {
-          "id": 2,
-          "content": "124123123"
-        },
-        {
-          "id": 3,
-          "content": "asdcfasdcf"
-        },
-        {
-          "id": 4,
-          "content": "234234234c234"
-        }
-      ]
+      "content": "코멭느"
     },
     {
       "id": 2,
@@ -32,13 +14,7 @@
       "URL": "www.ㅁㄹㅇ.com",
       "title": "123123123123er",
       "star": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "content": "ㄹㄹㄹㄹㄹㄹㄹ",
-      "comments": [
-        {
-          "id": 2,
-          "content": "멍청이에요"
-        }
-      ]
+      "content": "ㄹㄹㄹㄹㄹㄹㄹ"
     },
     {
       "id": 3,
@@ -46,13 +22,7 @@
       "URL": "www.12ㅊ312ㅊ.com",
       "title": "jㅁㄴㅊㅇㄹㅁㅊㅇㄴㄹㅊㅁㄴㅇㄹ",
       "star": "ㅋㅌㅌㅌㅌㅌㅌㅎㅎㅎㅎㅎㅎㅎㅎ",
-      "content": "코멭ㄷㄷㄷㄷㄷㄷㄷ느",
-      "comments": [
-        {
-          "id": 3,
-          "content": "이게뭐죠"
-        }
-      ]
+      "content": "코멭ㄷㄷㄷㄷㄷㄷㄷ느"
     },
     {
       "writer": "asdfasdf",
@@ -60,11 +30,6 @@
       "title": "fasdfasdfasdf",
       "star": "asdfa121123123123123",
       "content": "123123123123123123",
-      "comments": [
-        {
-          "content": null
-        }
-      ],
       "id": 4
     },
     {
@@ -73,12 +38,70 @@
       "title": "acsdfacsd",
       "star": "123123123",
       "content": "512525125124124",
+      "id": 5
+    },
+    {
+      "writer": "asdcfascdf",
+      "URL": "http://jun.hansung.ac.kr/CWP/htmls/HTML%20Input%20Types.html",
+      "title": "qwcerasdc",
+      "star": "ascdfacsdfcae",
+      "content": "asdfacsecfasdcfacsd",
       "comments": [
         {
           "content": null
         }
       ],
+      "id": 6
+    },
+    {
+      "writer": "ascdfacsdfacsd",
+      "URL": "https://www.invisionapp.com/",
+      "title": "awecfasdfc",
+      "star": "cewascdf",
+      "content": "acwe",
+      "comments": [
+        {
+          "content": null
+        }
+      ],
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "comment": "바보같네요",
+      "postsId": 6
+    },
+    {
+      "id": 2,
+      "comment": "124123123",
+      "postsId": 6
+    },
+    {
+      "id": 3,
+      "comment": "asdcfasdcf",
+      "postsId": 6
+    },
+    {
+      "id": 4,
+      "comment": "234234234c234",
+      "postsId": 4
+    },
+    {
+      "comment": "새로운 코멘트 for 넘버6",
+      "postsId": 6,
       "id": 5
+    },
+    {
+      "comment": "또다시 새로운 코멘트",
+      "postsId": 6,
+      "id": 6
+    },
+    {
+      "comment": "완전 완전 새로운 코멘트",
+      "postsId": 6,
+      "id": 7
     }
   ]
 }

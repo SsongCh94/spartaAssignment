@@ -14,7 +14,7 @@ function Home() {
 
   const fetchMovies = async () => {
     const { data } = await api.get("/posts");
-    console.log("data ===>", data);
+    // console.log("data ===>", data);
     setMovies(data);
   };
 

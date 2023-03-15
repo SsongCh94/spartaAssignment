@@ -4,33 +4,49 @@ import api from "../axios/api";
 import Inputs from "../redux/components/Inputs";
 import { useInput } from "../Hooks/useInput";
 import Buttons from "../redux/components/Buttons";
+import { useDispatch, useSelector } from "react-redux";
+import { __addComments, __getComments } from "../redux/modules/commentsSlice";
 
 function Detail() {
   const params = useParams();
   const [movie, setMovie] = useState(null);
   const [comment, handleComment] = useInput("");
+  const dispatch = useDispatch();
+
+  const { isLoading, error, comments } = useSelector((state) => {
+    return state.comments;
+  });
 
   const fetchMovies = async () => {
     const { data } = await api.get("/posts");
     setMovie(data);
   };
 
-  //FIXME: 댓글 추가 테스트중
-  const onAddBtnClickHandler = async () => {
-    const { data } = await api.get(`/posts/${params.id}`);
-    console.log("data ===>", data.comments);
+  useEffect(() => {
+    dispatch(__getComments());
+  }, [dispatch]);
+
+  const newComment = { comment, postsId: parseInt(params.id) };
+
+  // FIXME: 댓글 추가 테스트중
+  const onAddBtnClickHandler = () => {
+    dispatch(__addComments(newComment));
+    // const { data } = await api.get("/comments");
+    // console.log("data ===>", data);
   };
+  // FIXME: 댓글추가 블럭
 
   useEffect(() => {
     fetchMovies();
-    onAddBtnClickHandler();
   }, []);
 
   const foundMovie = movie?.find((item) => {
     return item.id === parseInt(params.id);
   });
 
-  console.log("movie ====>>>", movie);
+  const foundComments = comments.filter((item) => {
+    return item.postsId === parseInt(params.id);
+  });
 
   return (
     <div>
@@ -40,14 +56,14 @@ function Detail() {
       <h1> 별점 : {foundMovie?.star} </h1>
       <h1> 코멘트 : {foundMovie?.content} </h1>
       <Inputs value={comment} onChange={handleComment} size={"large"} />
-      <Buttons>댓글 등록</Buttons>
+      <Buttons Func={onAddBtnClickHandler}>댓글 등록</Buttons>
       <h1>
         {" "}
         댓글 :{" "}
-        {foundMovie?.comments.map((item) => {
+        {foundComments.map((item) => {
           return (
             <div key={item.id}>
-              <h3> {item.content} </h3>
+              <h3> {item.comment} </h3>
             </div>
           );
         })}{" "}
