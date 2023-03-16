@@ -15,7 +15,7 @@ const initialState = {
 };
 
 export const __getComments = createAsyncThunk(
-  "movies/getMovies",
+  "comments/getComments",
   async (payload, thunkAPI) => {
     try {
       const data = await api.get("/comments");
@@ -31,7 +31,7 @@ export const __getComments = createAsyncThunk(
 );
 
 export const __addComments = createAsyncThunk(
-  "movies/addMovies",
+  "comments/addComments",
   async (payload, thunkAPI) => {
     try {
       await api.post("/comments", payload);

@@ -65,6 +65,14 @@
         }
       ],
       "id": 7
+    },
+    {
+      "writer": "작성자",
+      "URL": "http://localhost:3001/posts",
+      "title": "제목",
+      "star": "별점",
+      "content": "콘텐트",
+      "id": 8
     }
   ],
   "comments": [
@@ -122,6 +130,16 @@
       "comment": "ㅁㅊㅇㄴㄹㅁㅊㄷㄴㅊㅁㄴㅇㅊㄹ",
       "postsId": 2,
       "id": 11
+    },
+    {
+      "comment": "ddddd",
+      "postsId": 6,
+      "id": 12
+    },
+    {
+      "comment": "ㅁㅊㄴㅇㄹㅊㅁㄴㅇㄹㅊ",
+      "postsId": 8,
+      "id": 13
     }
   ]
 }

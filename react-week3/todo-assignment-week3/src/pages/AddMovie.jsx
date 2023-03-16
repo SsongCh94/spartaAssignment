@@ -2,7 +2,8 @@ import Inputs from "../redux/components/Inputs";
 import Buttons from "../redux/components/Buttons";
 import { StForm } from "./AddMovie.style";
 import { useInput } from "../Hooks/useInput";
-import api from "../axios/api";
+import { __addMovies } from "../redux/modules/moviesSlice";
+import { useDispatch } from "react-redux";
 
 function AddMovie() {
   const [writer, handleWriter] = useInput("");
@@ -10,6 +11,7 @@ function AddMovie() {
   const [title, handleTitle] = useInput("");
   const [star, handleStar] = useInput("");
   const [content, handleContent] = useInput("");
+  const dispatch = useDispatch();
 
   const newMovie = {
     writer,
@@ -17,15 +19,11 @@ function AddMovie() {
     title,
     star,
     content,
-    comments: [
-      {
-        content: null,
-      },
-    ],
   };
 
-  const onSubmitBtnHandler = async () => {
-    api.post("/posts", newMovie);
+  const onSubmitBtnHandler = () => {
+    dispatch(__addMovies(newMovie));
+    // api.post("/posts", newMovie);
   };
 
   return (

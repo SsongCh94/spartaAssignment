@@ -1,46 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import api from "../axios/api";
 import Inputs from "../redux/components/Inputs";
 import { useInput } from "../Hooks/useInput";
 import Buttons from "../redux/components/Buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { __addComments, __getComments } from "../redux/modules/commentsSlice";
+import { __getMovies } from "../redux/modules/moviesSlice";
 
 function Detail() {
   const params = useParams();
-  const [movie, setMovie] = useState(null);
   const [comment, handleComment] = useInput("");
   const dispatch = useDispatch();
 
-  const { isLoading, error, comments } = useSelector((state) => {
-    return state.comments;
-  });
-
-  const fetchMovies = async () => {
-    const { data } = await api.get("/posts");
-    setMovie(data);
-  };
+  const { comments } = useSelector((state) => state.comments);
+  const { movies } = useSelector((state) => state.movies);
 
   useEffect(() => {
     dispatch(__getComments());
+    dispatch(__getMovies());
   }, [dispatch]);
 
   const newComment = { comment, postsId: parseInt(params.id) };
 
-  // FIXME: 댓글 추가 테스트중
   const onAddBtnClickHandler = () => {
     dispatch(__addComments(newComment));
-    // const { data } = await api.get("/comments");
-    // console.log("data ===>", data);
   };
-  // FIXME: 댓글추가 블럭
 
-  useEffect(() => {
-    fetchMovies();
-  }, []);
-
-  const foundMovie = movie?.find((item) => {
+  const foundMovie = movies.find((item) => {
     return item.id === parseInt(params.id);
   });
 
