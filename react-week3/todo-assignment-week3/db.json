@@ -1,141 +1,23 @@
 {
   "posts": [
     {
-      "id": 1,
-      "writer": "쏭",
-      "URL": "www.typicode.com",
-      "title": "json-server",
-      "star": "별볇렵ㄹ",
-      "content": "코멭느"
-    },
-    {
-      "id": 2,
-      "writer": "송송송",
-      "URL": "www.ㅁㄹㅇ.com",
-      "title": "123123123123er",
-      "star": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "content": "ㄹㄹㄹㄹㄹㄹㄹ"
-    },
-    {
-      "id": 3,
-      "writer": "채널94",
-      "URL": "www.12ㅊ312ㅊ.com",
-      "title": "jㅁㄴㅊㅇㄹㅁㅊㅇㄴㄹㅊㅁㄴㅇㄹ",
-      "star": "ㅋㅌㅌㅌㅌㅌㅌㅎㅎㅎㅎㅎㅎㅎㅎ",
-      "content": "코멭ㄷㄷㄷㄷㄷㄷㄷ느"
-    },
-    {
-      "writer": "asdfasdf",
-      "URL": "https://colorate.azurewebsites.net/ko/Color/CCD0D9",
-      "title": "fasdfasdfasdf",
-      "star": "asdfa121123123123123",
-      "content": "123123123123123123",
-      "id": 4
-    },
-    {
-      "writer": "ascdf",
-      "URL": "https://colorate.azurewebsites.net/ko/Color/CCD0D9",
-      "title": "acsdfacsd",
-      "star": "123123123",
-      "content": "512525125124124",
-      "id": 5
-    },
-    {
-      "writer": "asdcfascdf",
-      "URL": "http://jun.hansung.ac.kr/CWP/htmls/HTML%20Input%20Types.html",
-      "title": "qwcerasdc",
-      "star": "ascdfacsdfcae",
-      "content": "asdfacsecfasdcfacsd",
-      "comments": [
-        {
-          "content": null
-        }
-      ],
-      "id": 6
-    },
-    {
-      "writer": "ascdfacsdfacsd",
-      "URL": "https://www.invisionapp.com/",
-      "title": "awecfasdfc",
-      "star": "cewascdf",
-      "content": "acwe",
-      "comments": [
-        {
-          "content": null
-        }
-      ],
-      "id": 7
-    },
-    {
       "writer": "작성자",
       "URL": "http://localhost:3001/posts",
       "title": "제목",
       "star": "별점",
       "content": "콘텐트",
       "id": 8
+    },
+    {
+      "writer": "2223232",
+      "URL": "",
+      "title": "",
+      "star": "",
+      "content": "",
+      "id": 14
     }
   ],
   "comments": [
-    {
-      "id": 1,
-      "comment": "바보같네요",
-      "postsId": 6
-    },
-    {
-      "id": 2,
-      "comment": "124123123",
-      "postsId": 6
-    },
-    {
-      "id": 3,
-      "comment": "asdcfasdcf",
-      "postsId": 6
-    },
-    {
-      "id": 4,
-      "comment": "234234234c234",
-      "postsId": 4
-    },
-    {
-      "comment": "새로운 코멘트 for 넘버6",
-      "postsId": 6,
-      "id": 5
-    },
-    {
-      "comment": "또다시 새로운 코멘트",
-      "postsId": 6,
-      "id": 6
-    },
-    {
-      "comment": "완전 완전 새로운 코멘트",
-      "postsId": 6,
-      "id": 7
-    },
-    {
-      "comment": "진심 찐으로 새로운 댓글",
-      "postsId": 6,
-      "id": 8
-    },
-    {
-      "comment": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 잘된당",
-      "postsId": 6,
-      "id": 9
-    },
-    {
-      "comment": "ㅁㅊㄴㅇㄹㅁㅊㄴㅇㄹㅊ",
-      "postsId": 1,
-      "id": 10
-    },
-    {
-      "comment": "ㅁㅊㅇㄴㄹㅁㅊㄷㄴㅊㅁㄴㅇㅊㄹ",
-      "postsId": 2,
-      "id": 11
-    },
-    {
-      "comment": "ddddd",
-      "postsId": 6,
-      "id": 12
-    },
     {
       "comment": "ㅁㅊㄴㅇㄹㅊㅁㄴㅇㄹㅊ",
       "postsId": 8,

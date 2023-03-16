@@ -35,7 +35,6 @@ export const __addComments = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       await api.post("/comments", payload);
-      console.log("payload ==>", payload);
       const data = await api.get("/comments");
 
       return thunkAPI.fulfillWithValue(data.data);
@@ -46,6 +45,24 @@ export const __addComments = createAsyncThunk(
     }
   }
 );
+
+// export const __deleteComments = createAsyncThunk(
+//   "comments/deleteComments",
+//   async (payload, thunkAPI) => {
+//     try {
+//       await api.delete(`/comments/${payload}`);
+//       const data = await api.get("/comments");
+//       // console.log("data =====>>>>", data);
+//       console.log("data.data ==>", data.data);
+
+//       return thunkAPI.fulfillWithValue(data.data);
+//     } catch (error) {
+//       console.log("error", error);
+
+//       return thunkAPI.rejectWithValue(error);
+//     }
+//   }
+// );
 
 export const commentsSlice = createSlice({
   name: "comments",
@@ -81,6 +98,20 @@ export const commentsSlice = createSlice({
       state.isError = true;
       state.error = action.payload;
     },
+    // [__deleteComments.pending]: (state, action) => {
+    //   state.isLoading = true;
+    //   state.isError = false;
+    // },
+    // [__deleteComments.fulfilled]: (state, action) => {
+    //   state.isLoading = false;
+    //   state.isError = false;
+    //   state.comments = action.payload;
+    // },
+    // [__deleteComments.rejected]: (state, action) => {
+    //   state.isLoading = false;
+    //   state.isError = true;
+    //   state.error = action.payload;
+    // },
   },
 });
 

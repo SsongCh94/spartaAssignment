@@ -50,6 +50,43 @@ export const __addMovies = createAsyncThunk(
   }
 );
 
+export const __deleteMovies = createAsyncThunk(
+  "movies/deleteMovies",
+  async (payload, thunkAPI) => {
+    try {
+      await api.delete(`/posts/${payload}`);
+      const data = await api.get("/posts");
+      // console.log("data =====>>>>", data);
+      console.log("data.data ==>", data.data);
+
+      return thunkAPI.fulfillWithValue(data.data);
+    } catch (error) {
+      console.log("error", error);
+
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const __reviseMovies = createAsyncThunk(
+  "movies/reviseMovies",
+  async (payload, thunkAPI) => {
+    try {
+      // await api.patch(`/posts/${payload}`, payload);
+      const data = await api.get("/posts");
+      console.log("payload", payload);
+      // console.log("data =====>>>>", data);
+      // console.log("data.data ==>", data.data);
+
+      return thunkAPI.fulfillWithValue(data.data);
+    } catch (error) {
+      console.log("error", error);
+
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
 export const moviesSlice = createSlice({
   name: "movies",
   initialState,
@@ -80,6 +117,20 @@ export const moviesSlice = createSlice({
       state.movies = action.payload;
     },
     [__addMovies.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.error = action.payload;
+    },
+    [__deleteMovies.pending]: (state, action) => {
+      state.isLoading = true;
+      state.isError = false;
+    },
+    [__deleteMovies.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.movies = action.payload;
+    },
+    [__deleteMovies.rejected]: (state, action) => {
       state.isLoading = false;
       state.isError = true;
       state.error = action.payload;

@@ -1,10 +1,17 @@
-import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { __deleteMovies } from "../modules/moviesSlice";
 import Buttons from "./Buttons";
 
 function Cards({ id, title, URL, writer, star }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // const giveId = {id}
+  const deleteBtnHandler = (id) => {
+    dispatch(__deleteMovies(id));
+  };
 
   return (
     <CardBox>
@@ -13,7 +20,9 @@ function Cards({ id, title, URL, writer, star }) {
       <h3>{writer}</h3>
       <h3>{star}</h3>
       <Buttons Func={() => navigate(`/detail/${id}`)}>상세보기</Buttons>
-      <Buttons size={"delete"}>삭제</Buttons>
+      <Buttons size={"delete"} Func={() => deleteBtnHandler(id)}>
+        삭제
+      </Buttons>
     </CardBox>
   );
 }
