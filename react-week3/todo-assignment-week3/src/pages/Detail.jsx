@@ -24,13 +24,12 @@ function Detail() {
     dispatch(__getMovies());
   }, [dispatch]);
 
-  const revisedMovies = [
-    { id: parseInt(params.id) },
-    {
-      star,
-      content,
-    },
-  ];
+  const revisedMovies = {
+    id: parseInt(params.id),
+
+    star,
+    content,
+  };
 
   const newComment = { comment, postsId: parseInt(params.id) };
 

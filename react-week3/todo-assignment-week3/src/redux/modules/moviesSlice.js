@@ -72,8 +72,8 @@ export const __reviseMovies = createAsyncThunk(
   "movies/reviseMovies",
   async (payload, thunkAPI) => {
     try {
-      const { id } = payload[0];
-      await api.patch(`/posts/${id}`, payload[1]);
+      const { id, star, content } = payload;
+      await api.patch(`/posts/${id}`, { star, content });
       const data = await api.get("/posts");
 
       return thunkAPI.fulfillWithValue(data.data);
