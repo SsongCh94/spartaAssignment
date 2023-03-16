@@ -24,10 +24,13 @@ function Detail() {
     dispatch(__getMovies());
   }, [dispatch]);
 
-  const revisedMovies = {
-    star,
-    content,
-  };
+  const revisedMovies = [
+    { id: parseInt(params.id) },
+    {
+      star,
+      content,
+    },
+  ];
 
   const newComment = { comment, postsId: parseInt(params.id) };
 
@@ -39,6 +42,7 @@ function Detail() {
   };
   const onReviseCompleteHandler = (payload) => {
     dispatch(__reviseMovies(payload));
+    setModalOpen(false);
   };
 
   const foundMovie = movies.find((item) => {

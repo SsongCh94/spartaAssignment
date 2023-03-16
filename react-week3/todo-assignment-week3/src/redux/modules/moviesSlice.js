@@ -72,11 +72,9 @@ export const __reviseMovies = createAsyncThunk(
   "movies/reviseMovies",
   async (payload, thunkAPI) => {
     try {
-      // await api.patch(`/posts/${payload}`, payload);
+      const { id } = payload[0];
+      await api.patch(`/posts/${id}`, payload[1]);
       const data = await api.get("/posts");
-      console.log("payload", payload);
-      // console.log("data =====>>>>", data);
-      // console.log("data.data ==>", data.data);
 
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -131,6 +129,20 @@ export const moviesSlice = createSlice({
       state.movies = action.payload;
     },
     [__deleteMovies.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.error = action.payload;
+    },
+    [__reviseMovies.pending]: (state, action) => {
+      state.isLoading = true;
+      state.isError = false;
+    },
+    [__reviseMovies.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.movies = action.payload;
+    },
+    [__reviseMovies.rejected]: (state, action) => {
       state.isLoading = false;
       state.isError = true;
       state.error = action.payload;
