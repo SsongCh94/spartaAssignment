@@ -10,7 +10,7 @@ import Modals from "../redux/components/Modals";
 
 function Detail() {
   const params = useParams();
-  const [comment, handleComment] = useInput("");
+  const [comment, handleComment, setComment] = useInput("");
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [star, handleStar] = useInput("");
@@ -36,6 +36,7 @@ function Detail() {
 
   const onAddBtnClickHandler = () => {
     dispatch(__addComments(newComment));
+    setComment("");
   };
   const onReviseBtnClickHandler = () => {
     setModalOpen(true);

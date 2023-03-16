@@ -4,8 +4,8 @@
       "writer": "작성자",
       "URL": "http://localhost:3001/posts",
       "title": "제목",
-      "star": "이걸 수정해도",
-      "content": "댓글은 그대로 남아있겠지?",
+      "star": "별점수정합니다~",
+      "content": "수정입니다~",
       "id": 8
     },
     {
@@ -15,6 +15,14 @@
       "star": "수정하ㅏ면",
       "content": "모달도 꺼짐",
       "id": 14
+    },
+    {
+      "writer": "기록이 될까",
+      "URL": "http://localhost:3000/addMovie",
+      "title": "useInput 커스텀훅 수정 1차시기",
+      "star": "아직몰라",
+      "content": "되나?",
+      "id": 15
     }
   ],
   "comments": [
@@ -22,6 +30,11 @@
       "comment": "ㅁㅊㄴㅇㄹㅊㅁㄴㅇㄹㅊ",
       "postsId": 8,
       "id": 13
+    },
+    {
+      "comment": "댓글달면 input",
+      "postsId": 8,
+      "id": 14
     }
   ]
 }

@@ -6,11 +6,11 @@ import { __addMovies } from "../redux/modules/moviesSlice";
 import { useDispatch } from "react-redux";
 
 function AddMovie() {
-  const [writer, handleWriter] = useInput("");
-  const [URL, handleURL] = useInput("");
-  const [title, handleTitle] = useInput("");
-  const [star, handleStar] = useInput("");
-  const [content, handleContent] = useInput("");
+  const [writer, handleWriter, setWriter] = useInput("");
+  const [URL, handleURL, setURL] = useInput("");
+  const [title, handleTitle, setTitle] = useInput("");
+  const [star, handleStar, setStar] = useInput("");
+  const [content, handleContent, setContent] = useInput("");
   const dispatch = useDispatch();
 
   const newMovie = {
@@ -23,6 +23,11 @@ function AddMovie() {
 
   const onSubmitBtnHandler = () => {
     dispatch(__addMovies(newMovie));
+    setWriter("");
+    setURL("");
+    setTitle("");
+    setStar("");
+    setContent("");
     // api.post("/posts", newMovie);
   };
 
